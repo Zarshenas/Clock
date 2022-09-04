@@ -17,14 +17,34 @@ function time(){
             h=h-12;
             timeZone.innerText = "PM";
         }
-        if( h < 10 ){
-            watchEl.innerText = `0${h} : ${m} : ${s} `;
-        }
-        if( m < 10 ){
-            watchEl.innerText = `${h} : 0${m} : ${s} `;
-        }
-        if( s < 10 ){
-            watchEl.innerText = `${h} : ${m} : 0${s} `;
+        if(document.body.clientWidth <= 599){
+            if( h < 10 )
+                h = `0${h}`;
+            else
+                h = h;
+            if( m < 10 )
+                m = `0${m}`;
+            else
+                m = m;
+            if( s < 10 )
+                s = `0${s}`;
+            else
+                s = s;
+            watchEl.innerHTML = `${h} <br> ${m} <br> ${s} `;
+        }else{
+            if( h < 10 )
+                h = `0${h}`;
+            else
+                h = h;
+            if( m < 10 )
+                m = `0${m}`;
+            else
+                m = m;
+            if( s < 10 )
+                s = `0${s}`;
+            else
+                s = s;
+            watchEl.innerText = `${h} : ${m} : ${s} `;
         }
 }
 
